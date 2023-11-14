@@ -1,0 +1,109 @@
+
+.navigation {
+  position: sticky; top: 0;
+    z-index: 2;
+    height: 70px;
+    width: 100%;
+    background-color: rgb(250, 240, 240);
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+  
+    .logo-container {
+      height: 100%;
+      width: 100px;
+      padding: 25px;
+      animation-name:rotate;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    }
+    .nav-links-container {
+      width: 50%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+  
+      .nav-link {
+        padding: 10px 15px;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .button {
+    position: relative;
+    height: 60px;
+    width: 130px;
+    background-color: transparent;
+    border: 3px solid #fff;
+    color: black;
+    cursor: pointer;
+    transition: color 10ms cubic-bezier(0.1, 0.7, 0.6, 0.9); 
+    
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      background-color: black;
+      transform: scaleX(0);
+      transform-origin: left center;
+      transition: transform 700ms cubic-bezier(0.1, 0.7, 0.6, 0.9);
+    }
+    
+    &:hover {
+      &.button-start {
+        color: #f1b00f;
+      }
+      
+      &.button-next {
+        color: #c598af;
+      }
+      
+      &::before {
+        transform: scaleX(0.1)
+      }
+    }
+    
+    &-text {
+      position: relative;
+    }
+  }
+  
+  .start {
+    background-color: #f1b00f;
+    color: #fff;
+  }
+  
+  .next {
+    background-color: #c598af;
+    color: #f1b00f;
+    
+    &-list {
+      list-style: disc;
+      text-align: left;
+      margin: auto;
+      width: 430px;
+      line-height: 1.6;
+    }
+  }
+  
+
+  @media screen and (max-width: 600px) {
+    .navigation {
+      display: unset;
+      height: unset;
+      position: unset; top: unset;
+    }
+    .nav-links-container{
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  
+ 
+  
